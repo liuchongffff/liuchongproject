@@ -8,16 +8,19 @@ def fight():
     mpower = 100
     ehp = 1000
     epower = 100
+    print(f"the game begin. ")
+    my_hp = mhp - epower
+    energy_hp = ehp - mpower
 
-    #对打多轮
     while True:
-        my_hp = mhp - epower
-        energy_hp = ehp - mpower
         if my_hp <=0:
-            print(f"i lose the game. myhp:{my_hp} enemy_hp:{energy_hp}")
+            print(f"i lose the game. ")
             break
         elif energy_hp <= 0:
-            print(f"the enemy lose the game. myhp:{my_hp} enemy_hp:{energy_hp}")
+            print(f"the enemy lose the game. ")
             break
+        my_hp = my_hp - epower
+        energy_hp = energy_hp - mpower
+
 #调用
 fight()
